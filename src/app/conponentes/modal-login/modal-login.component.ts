@@ -39,10 +39,19 @@ export class ModalLoginComponent {
         success => {
           if (success) {
             console.log('Login successful');
+            alert('Login successful'); // Muestra una alerta de éxito
+
+            localStorage.setItem('username', username);
+            localStorage.setItem('pasword,', password);
+            localStorage.setItem('isLogged', 'true');
+
             this.closeModal();
             // Aquí puedes añadir la lógica para redirigir al usuario o mostrar un mensaje de éxito
           } else {
-            console.log('Login failed');
+
+            alert('Login failed try again');
+            console.log('Login failed try again');
+
             // Aquí puedes añadir la lógica para manejar un fallo de inicio de sesión
           }
         },
