@@ -10,6 +10,9 @@ import { ModalLoginComponent } from './conponentes/modal-login/modal-login.compo
 import {ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import { PrincipalComponent } from './conponentes/principal/principal.component';
+import { MenuRestauranteComponent } from './conponentes/menu-restaurante/menu-restaurante.component';
+import { MenuCategoriaComponent } from './conponentes/menu-categoria/menu-categoria.component';
+import { MenuOrdenComponent } from './conponentes/menu-orden/menu-orden.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,10 @@ import { PrincipalComponent } from './conponentes/principal/principal.component'
     FooterInicioComponent,
     HeaderInicioComponent,
     ModalLoginComponent,
-    PrincipalComponent
+    PrincipalComponent,
+    MenuRestauranteComponent,
+    MenuCategoriaComponent,
+    MenuOrdenComponent
   ],
   imports: [
     BrowserModule,

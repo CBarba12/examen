@@ -1,0 +1,24 @@
+/* Estilos generales del encabezado */
+
+
+/* Estilos específicos del logo */
+.logo {
+  height: 50px; /* Altura del logo */
+
+}
+
+/* Estilos específicos del título */
+.title {
+  color: saddlebrown; /* Color del texto */
+  font-size: 20px; /* Tamaño de fuente */
+  font-weight: bold; /* Negrita */
+
+}
+header {
+  background-color: lightblue; /* Celeste */
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+

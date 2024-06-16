@@ -1,0 +1,9 @@
+.contenedor {
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-contenedor {
+  display: flex;
+  justify-content: space-between; /* Para que los menús estén uno al lado del otro */
+}
