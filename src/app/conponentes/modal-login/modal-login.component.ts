@@ -3,6 +3,9 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import {LoginService} from "../../servicios/login.service";
+import {Router} from "@angular/router";
+import {PrincipalService} from "../../servicios/principal.service";
+import {HeaderInicioComponent} from "../header-inicio/header-inicio.component";
 
 @Component({
   selector: 'app-modal-login',
@@ -13,7 +16,7 @@ export class ModalLoginComponent {
   showModal: boolean = false;
   loginForm: FormGroup;
 
-  constructor(private fb: FormBuilder,private loginService: LoginService) {
+  constructor(private fb: FormBuilder,private loginService: LoginService,private router:Router,private header:HeaderInicioComponent) {
     this.loginForm = this.fb.group({
       username: ['', Validators.required],
       password: ['', Validators.required]
@@ -46,6 +49,11 @@ export class ModalLoginComponent {
             localStorage.setItem('isLogged', 'true');
 
             this.closeModal();
+
+
+            this.router.navigate(['/principal']);
+            this.loginService.guardar_login(username,password);
+            this.header.ingresardatos();
             // Aquí puedes añadir la lógica para redirigir al usuario o mostrar un mensaje de éxito
           } else {
 

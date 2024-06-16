@@ -9,6 +9,7 @@ import { HeaderInicioComponent } from './conponentes/header-inicio/header-inicio
 import { ModalLoginComponent } from './conponentes/modal-login/modal-login.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
+import { PrincipalComponent } from './conponentes/principal/principal.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import {HttpClientModule} from "@angular/common/http";
     InicioComponent,
     FooterInicioComponent,
     HeaderInicioComponent,
-    ModalLoginComponent
+    ModalLoginComponent,
+    PrincipalComponent
   ],
   imports: [
     BrowserModule,

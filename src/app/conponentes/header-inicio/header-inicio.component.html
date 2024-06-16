@@ -5,13 +5,14 @@
     <img src="assets/logo.png" alt="Logo" style="height: 50px;">
   </div>
   <div>
+
     <button *ngIf="!isLogged" style="padding: 10px 20px; background-color: #007bff; color: #fff; border: none; border-radius: 5px;" (click)="openModal()">Iniciar sesión</button>
     <button *ngIf="isLogged" style="padding: 10px 20px; background-color: #dc3545; color: #fff; border: none; border-radius: 5px;" (click)="logout()">Cerrar sesión</button>
   </div>
 </header>
-
-<!-- Añadir el componente modal aquí -->
 <app-modal-login></app-modal-login>
+<!-- Añadir el componente modal aquí -->
+
 
 
 
