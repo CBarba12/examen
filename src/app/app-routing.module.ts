@@ -4,8 +4,7 @@ import {InicioComponent} from "./conponentes/inicio/inicio.component";
 
 const routes: Routes = [
 
-  {path:'',component:InicioComponent},
-
+  {path:'',component:InicioComponent}
 
 ];
 

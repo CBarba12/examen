@@ -2,6 +2,7 @@
 
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {LoginService} from "../../servicios/login.service";
 
 @Component({
   selector: 'app-modal-login',
@@ -12,7 +13,7 @@ export class ModalLoginComponent {
   showModal: boolean = false;
   loginForm: FormGroup;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder,private loginService: LoginService) {
     this.loginForm = this.fb.group({
       username: ['', Validators.required],
       password: ['', Validators.required]
@@ -31,12 +32,26 @@ export class ModalLoginComponent {
     if (this.loginForm.valid) {
       const username = this.loginForm.get('username')?.value;
       const password = this.loginForm.get('password')?.value;
-      console.log('Username:', username, 'Password:', password);
-      // Aquí puedes añadir la lógica para manejar el inicio de sesión
 
+      console.log('esta es: ', username, password);
+
+      this.loginService.login(username, password).subscribe(
+        success => {
+          if (success) {
+            console.log('Login successful');
+            this.closeModal();
+            // Aquí puedes añadir la lógica para redirigir al usuario o mostrar un mensaje de éxito
+          } else {
+            console.log('Login failed');
+            // Aquí puedes añadir la lógica para manejar un fallo de inicio de sesión
+          }
+        },
+        error => {
+          console.error('Login error', error);
+        }
+      );
     }
   }
-
 }
 
 

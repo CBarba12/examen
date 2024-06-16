@@ -8,6 +8,7 @@ import { FooterInicioComponent } from './conponentes/footer-inicio/footer-inicio
 import { HeaderInicioComponent } from './conponentes/header-inicio/header-inicio.component';
 import { ModalLoginComponent } from './conponentes/modal-login/modal-login.component';
 import {ReactiveFormsModule} from "@angular/forms";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import {ReactiveFormsModule} from "@angular/forms";
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     ReactiveFormsModule
   ],
   providers: [],
