@@ -11,8 +11,10 @@ export class MenuCategoriaComponent implements OnInit {
 
   categorias: any[];
   categoriaSeleccionada: any;
+  segundalista: any[];
 
   constructor(private categoriaService: CategoriaService,private router: Router) { }
+
 
   ngOnInit(): void {
     this.obtenerCategorias();
@@ -37,7 +39,23 @@ export class MenuCategoriaComponent implements OnInit {
   seleccionarCategoria(categoria: any): void {
     this.categoriaSeleccionada = categoria;
     console.log('Categoría seleccionada:', this.categoriaSeleccionada);
-    this.router.navigate(['/Menu', categoria]);
 
+
+
+    this.categoriaService.obtenerCategoriaPorNombre(categoria).subscribe(
+      categorias => {
+        console.log("Dentro de obtenerCategorias, categorías recibidas:");
+        this.segundalista = categorias;
+        console.log(this.categorias);
+      },
+      error => {
+        console.error('Error al obtener categorías:', error);
+      }
+    );
   }
+
+
+
+
+
 }

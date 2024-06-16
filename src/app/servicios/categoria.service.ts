@@ -9,7 +9,7 @@ export class CategoriaService {
 
   private apiUrl = 'http://localhost:8080/platillos/listar_por_categoria';
 
-  private URL2 = 'http://localhost:8080/platillos/listar_porcategoria';
+  private URL2 = 'http://localhost:8080/platillos/listarplatillo';
 
   constructor(private http: HttpClient) { }
 
@@ -22,6 +22,10 @@ export class CategoriaService {
 
 
   obtenerCategoriaPorNombre(nombre: string): Observable<any[]> {
-    return this.http.get<any[]>(this.URL2);
+    return this.http.get<any[]>(`${this.URL2}/${nombre}`); // Utiliza interpolación de cadenas para concatenar la URL correctamente
   }
+
+
+
+
 }

@@ -1,7 +1,17 @@
 
-
-<ul>
+<ul class="centrada">
   <li *ngFor="let categoria of categorias">
     <button (click)="seleccionarCategoria(categoria)">{{ categoria }}</button>
+  </li>
+</ul>
+
+
+
+
+
+
+<ul class="centrada">
+  <li *ngFor="let segunda of segundalista">
+    {{ segunda }}
   </li>
 </ul>
