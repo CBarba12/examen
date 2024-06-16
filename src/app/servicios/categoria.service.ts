@@ -7,7 +7,7 @@ import {Observable} from "rxjs";
 })
 export class CategoriaService {
 
-  private apiUrl = 'http://localhost:8080/platillos/listarPorNombre';
+  private apiUrl = 'http://localhost:8080/platillos/listar_por_categoria';
 
   private URL2 = 'http://localhost:8080/platillos/listar_porcategoria';
 
